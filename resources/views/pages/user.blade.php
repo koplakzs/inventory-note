@@ -39,6 +39,7 @@
                                     data-id="{{ $user->id }}">Del</button>
                                 <button class="edit-btn text-sky-700 font-semibold"
                                     data-id="{{ $user->id }}">Edit</button>
+                                <a href="pdf/{{ $user->id }} " class="text-stone-700 font-semibold">Print</a>
                             </td>
                         </tr>
                     @endforeach

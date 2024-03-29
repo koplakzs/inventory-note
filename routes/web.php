@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\PdfController;
 use App\Http\Controllers\UserInventoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,3 +17,5 @@ Route::controller(InventoryController::class)->group(function () {
 });
 
 Route::resource('user', UserInventoryController::class);
+
+Route::get("/pdf/{id}", [PdfController::class, 'index']);
