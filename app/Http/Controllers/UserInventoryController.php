@@ -36,6 +36,11 @@ class UserInventoryController extends Controller
             'phone' => "required",
         ]);
 
+        $user = UserInventory::where("nim", $validated['nim'])->first();
+
+        if ($user) {
+            return redirect("/user");
+        }
 
         UserInventory::create($validated);
 
