@@ -14,7 +14,7 @@
 
 <body>
     @include('partials.navigation')
-    <div class="bg-slate-50 min-h-screen">
+    <div class="bg-slate-50 min-h-screen pb-10">
         @yield('content')
     </div>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"

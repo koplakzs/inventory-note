@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('inventories', function (Blueprint $table) {
             $table->uuid("id")->primary();
             $table->string("nim_user");
-            $table->string("username");
-            $table->string("phone_user");
+            $table->string("name");
+            $table->string("prodi");
             $table->timestamps();
 
             $table->foreign('nim_user')->references('nim')->on('user_inventories')->onDelete('cascade');

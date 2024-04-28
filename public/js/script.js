@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let userId, nim, username, phone;
+    let userId, nim, name, prodi;
 
     // Delete button
     $(".delete-btn").click(function (e) {
@@ -14,12 +14,12 @@ $(document).ready(function () {
         userId = $(this).data("id");
         let tr = $(this).closest("tr");
         nim = tr.find("#nim").attr("data-id");
-        username = tr.find("#username").attr("data-id");
-        phone = tr.find("#phone").attr("data-id");
+        name = tr.find("#name").attr("data-id");
+        prodi = tr.find("#prodi").attr("data-id");
 
         $("#form-nim").val(nim);
-        $("#form-username").val(username);
-        $("#form-phone").val(phone);
+        $("#form-name").val(name);
+        $("#form-prodi").val(prodi);
         $("#modal-edit").removeClass("hidden");
     });
 

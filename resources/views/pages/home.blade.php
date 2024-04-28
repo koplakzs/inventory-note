@@ -2,8 +2,8 @@
 
 @section('content')
     <main class="pt-32">
-        <p class="text-stone-950 text-4xl font-bold text-center mb-3">Daftar Peminjaman Barang di Labor Tercinta</p>
-        <section class="sticky top-20 py-4 flex justify-center bg-slate-50">
+        <p class="text-stone-950 text-4xl font-bold text-center mb-3">Daftar Hadir Yudisium</p>
+        <section class="sticky top-20 py-4 flex justify-center bg-slate-50 gap-x-5">
             <form action="/" method="POST" class="w-8/12 flex gap-x-3">
                 @csrf
                 <input name="nim_user" class="border-2 rounded-lg py-2 px-3 w-full" type="text" placeholder="Masukan Nim"
@@ -11,15 +11,17 @@
                 <button type="submit"
                     class="bg-sky-500 hover:bg-sky-600 active:bg-sky-700 text-white rounded-lg px-4">Daftar</button>
             </form>
+            <a href="/print" class="bg-red-500 hover:bg-red-600 active:bg-red-700 text-white rounded-lg px-4 py-2 ">Print
+                Daftar Hadir</a>
         </section>
         <section class=" flex justify-center ">
             <table class="table-fixed w-9/12 ">
                 <thead class="sticky top-36 bg-slate-50 ">
                     <tr>
-                        <th class="py-2">Nim</th>
+                        <th class="py-2">NIM</th>
                         <th class="py-2">Nama</th>
-                        <th class="py-2">Phone</th>
-                        <th class="py-2">Waktu Peminjaman</th>
+                        <th class="py-2">Prodi</th>
+                        <th class="py-2">Waktu Hadir</th>
                         <th class="py-2">Action</th>
                     </tr>
                 </thead>
@@ -28,8 +30,8 @@
                     @foreach ($list as $item)
                         <tr class="text-center">
                             <td id="nim" data-id=" {{ $item->nim_user }} "> {{ $item->nim_user }} </td>
-                            <td> {{ $item->username }} </td>
-                            <td> {{ $item->phone_user }} </td>
+                            <td> {{ $item->name }} </td>
+                            <td> {{ $item->prodi }} </td>
                             <td> {{ $item->created_at }} </td>
                             <td class="flex justify-center gap-x-5">
                                 <button class="delete-btn text-rose-700 font-semibold"
@@ -49,7 +51,7 @@
                 <!-- Modal Box -->
                 <div class="flex flex-col items-center justify-between bg-white p-10 rounded-lg w-3/6">
                     <p class="text-xl font-semibold text-slate-800">
-                        Apakah anda yakin ingin menghapus peminjaman ini ?
+                        Apakah anda yakin ingin menghapus daftar hadir ini ?
                     </p>
                     <div class="flex gap-x-6 mt-5">
                         <button id="close-modal-btn"

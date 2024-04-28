@@ -2,15 +2,15 @@
 
 @section('content')
     <main class="pt-32 ">
-        <p class="text-stone-950 text-4xl font-bold text-center mb-3">Daftar Pengguna Peminjaman Lab</p>
+        <p class="text-stone-950 text-4xl font-bold text-center mb-3">Daftar Mahasiswa Yudisium</p>
         <section class="sticky top-20 py-4 flex justify-center bg-slate-50">
             <form action="/user" method="POST" class="w-8/12 flex gap-x-3 ">
                 @csrf
                 <input class="border-2 rounded-lg py-2 px-3 w-full" type="text" placeholder="Masukan Nim" name="nim">
                 <input class="border-2 rounded-lg py-2 px-3 w-full" type="text" placeholder="Masukan Nama"
-                    name="username">
-                <input class="border-2 rounded-lg py-2 px-3 w-full" type="text" placeholder="Masukan Nomor Telepon"
-                    name="phone">
+                    name="name">
+                <input class="border-2 rounded-lg py-2 px-3 w-full" type="text" placeholder="Masukan Prodi"
+                    name="prodi">
                 <button type="submit"
                     class="bg-sky-500 hover:bg-sky-600 active:bg-sky-700 text-white rounded-lg px-4">Daftar</button>
             </form>
@@ -21,8 +21,7 @@
                     <tr>
                         <th class="py-2">Nim</th>
                         <th class="py-2">Nama</th>
-                        <th class="py-2">Phone</th>
-                        <th class="py-2">Waktu Pembuatan</th>
+                        <th class="py-2">Prodi</th>
                         <th class="py-2">Action</th>
                     </tr>
                 </thead>
@@ -31,9 +30,8 @@
                     @foreach ($users as $user)
                         <tr class="text-center">
                             <td id="nim" data-id=" {{ $user->nim }} "> {{ $user->nim }} </td>
-                            <td id="username" data-id="{{ $user->username }}"> {{ $user->username }} </td>
-                            <td id="phone" data-id="{{ $user->phone }}"> {{ $user->phone }} </td>
-                            <td> {{ $user->created_at }} </td>
+                            <td id="name" data-id="{{ $user->name }}"> {{ $user->name }} </td>
+                            <td id="prodi" data-id="{{ $user->prodi }}"> {{ $user->prodi }} </td>
                             <td class="flex justify-center gap-x-5">
                                 <button class="delete-btn text-rose-700 font-semibold"
                                     data-id="{{ $user->id }}">Del</button>
@@ -86,10 +84,10 @@
                         @csrf
                         <input id="form-nim" class="border-2 rounded-lg py-2 px-3 w-full" type="text"
                             placeholder="Masukan Nim" name="nim">
-                        <input id="form-username" class="border-2 rounded-lg py-2 px-3 w-full" type="text"
-                            placeholder="Masukan Nama" name="username">
-                        <input id="form-phone" class="border-2 rounded-lg py-2 px-3 w-full" type="text"
-                            placeholder="Masukan Nomor Telepon" name="phone">
+                        <input id="form-name" class="border-2 rounded-lg py-2 px-3 w-full" type="text"
+                            placeholder="Masukan Nama" name="name">
+                        <input id="form-prodi" class="border-2 rounded-lg py-2 px-3 w-full" type="text"
+                            placeholder="Masukan Prodi" name="prodi">
 
                         <div class="flex justify-center gap-x-6 mt-5">
                             <button id="close-modal-edit-btn" type="button"

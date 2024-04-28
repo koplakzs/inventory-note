@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('user_inventories', function (Blueprint $table) {
             $table->uuid("id")->primary();
             $table->string("nim")->unique();
-            $table->string("username");
-            $table->string("phone");
+            $table->string("name");
+            $table->string("prodi");
             $table->timestamps();
         });
     }

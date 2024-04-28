@@ -13,7 +13,7 @@ class UserInventory extends Model
     protected $keyType = 'string';
 
     protected $fillable = [
-        'username', 'nim', 'phone'
+        'name', 'nim', 'prodi'
     ];
 
 

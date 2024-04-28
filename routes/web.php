@@ -19,3 +19,4 @@ Route::controller(InventoryController::class)->group(function () {
 Route::resource('user', UserInventoryController::class);
 
 Route::get("/pdf/{id}", [PdfController::class, 'index']);
+Route::get("/print", [PdfController::class, 'all']);
